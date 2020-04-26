@@ -1,0 +1,11 @@
+---
+- name: Stop Tomcat
+  shell: /opt/tomcat8/bin/shutdown.sh
+
+- name: Copy war file
+  copy:
+    src: webapps.war
+    dest: /opt/tomcat8/webapps/webapps.war
+
+- name: Restart Tomcat
+  shell: /opt/tomcat8/bin/startup.sh

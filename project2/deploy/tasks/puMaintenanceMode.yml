@@ -1,0 +1,6 @@
+---
+- name: Put Site in Maintenance
+  file:
+    path: /etc/httpd/conf.d/proxy.conf
+    state: absent
+  notify: Apache Restart

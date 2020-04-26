@@ -1,0 +1,9 @@
+---
+- name: Put Site in Maintenance
+  include: puMaintenanceMode.yml
+  tags:
+  - PutMaintenance
+- name: Deploy War
+  include: deployWarFile.yml
+  tags:
+  - DeployWar 
