@@ -4,7 +4,7 @@
 
 - name: Copy war file
   copy:
-    src: webapps.war
+    src: "/var/lib/jenkins/workspace/{{ JOB_NAME }}/webapp/target/webapp.war"
     dest: /opt/tomcat8/webapps/webapps.war
 
 - name: Restart Tomcat
