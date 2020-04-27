@@ -1,11 +1,11 @@
 ---
 - name: Stop Tomcat
-  shell: /opt/tomcat8/bin/shutdown.sh
+  command: "{{ tomcat_path }}/bin/shutdown.sh"
 
 - name: Copy war file
   copy:
     src: "/var/lib/jenkins/workspace/{{ JOB_NAME }}/webapp/target/webapp.war"
-    dest: /opt/tomcat8/webapps/webapps.war
+    dest: "{{ tomcat_path }}/webapps/webapps.war"
 
-- name: Restart Tomcat
-  shell: /opt/tomcat8/bin/startup.sh
+- name: Start Tomcat
+  command: "{{ tomcat_path }}/bin/startup.sh"
